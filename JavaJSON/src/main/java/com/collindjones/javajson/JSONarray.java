@@ -17,8 +17,7 @@ public class JSONarray extends JSON {
 	 * @modify none
 	 * @effect creates a new JSONarray object.
 	 */
-	public JSONarray(JSON parent) {
-		super(parent);
+	public JSONarray() {
 		this.mRep = new ArrayList<JSON>();
 	}
 	
@@ -48,7 +47,17 @@ public class JSONarray extends JSON {
 
 	@Override
 	public String toString() {
-		// TODO: implement
-		return null;
+		if (this.mRep.size() == 0) {
+			return "[]";
+		}
+		
+		String ret = "[" + this.mRep.get(0).toString();
+		for (int i = 1;  i < this.mRep.size(); ++i) {
+			ret += "," + this.mRep.get(i).toString();
+		}
+		
+		ret += "]";
+		
+		return ret;
 	}
 }

@@ -15,8 +15,7 @@ public class JSONstring extends JSON {
 	 * @modify none
 	 * @effect none
 	 */
-	public JSONstring(JSON parent, String str) {
-		super(parent);
+	public JSONstring(String str) {
 		this.mRep = str;
 	}
 	
@@ -32,7 +31,6 @@ public class JSONstring extends JSON {
 	
 	@Override
 	public String toString() {
-		//- TODO: implement
-		return null;
+		return "\"" + this.mRep + "\"";
 	}
 }
