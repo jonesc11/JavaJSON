@@ -15,8 +15,7 @@ public class JSONdouble extends JSON {
 	 * @modify none
 	 * @effect creates a new JSONdouble object
 	 */
-	public JSONdouble(JSON parent, double rep) {
-		super(parent);
+	public JSONdouble(double rep) {
 		this.mRep = rep;
 	}
 	
@@ -32,7 +31,6 @@ public class JSONdouble extends JSON {
 
 	@Override
 	public String toString() {
-		// TODO: implement
-		return null;
+		return (new Double(this.mRep)).toString();
 	}
 }

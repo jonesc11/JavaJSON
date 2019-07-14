@@ -17,8 +17,7 @@ public class JSONobject extends JSON {
 	 * @modify none
 	 * @effect creates a new JSONobject object
 	 */
-	public JSONobject(JSON parent) {
-		super(parent);
+	public JSONobject() {
 		this.mRep = new HashMap<String, JSON>();
 	}
 	
@@ -28,7 +27,7 @@ public class JSONobject extends JSON {
 	 * @effect none
 	 * @return a copy of this.mRep
 	 */
-	public HashMap<String, JSON> getMap() {
+	public Map<String, JSON> getMap() {
 		return new HashMap<String, JSON>(this.mRep);
 	}
 	
@@ -45,7 +44,20 @@ public class JSONobject extends JSON {
 	
 	@Override
 	public String toString() {
-		//- TODO: implement
-		return null;
+		String ret = "{";
+		
+		boolean first = true;
+		for (String key : this.mRep.keySet()) {
+			if (!first) {
+				ret += ",";
+			}
+			
+			first = false;
+			ret += "\"" + key + "\":" + this.mRep.get(key).toString();
+		}
+		
+		ret += "}";
+		
+		return ret;
 	}
 }

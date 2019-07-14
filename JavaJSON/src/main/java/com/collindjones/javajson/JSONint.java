@@ -15,8 +15,7 @@ public class JSONint extends JSON {
 	 * @modify none
 	 * @effect creates a new object
 	 */
-	public JSONint(JSON parent, int rep) {
-		super(parent);
+	public JSONint(int rep) {
 		this.mRep = rep;
 	}
 	
@@ -32,7 +31,6 @@ public class JSONint extends JSON {
 
 	@Override
 	public String toString() {
-		// TODO: implement
-		return null;
+		return (new Integer(this.mRep)).toString();
 	}
 }
