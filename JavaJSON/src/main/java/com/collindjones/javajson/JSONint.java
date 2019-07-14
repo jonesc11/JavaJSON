@@ -1,23 +1,23 @@
 package com.collindjones.javajson;
 
 /**
- * This object represents a string in JSON.
+ * This object represents an integer found in a JSON object.
  * 
  * @author jonesc11
  */
-public class JSONstring extends JSON {
-	private String mRep;
+public class JSONint extends JSON {
+	private int mRep;
 	
 	/**
 	 * @param parent is this object's parent
-	 * @param str is the string this object represents
+	 * @param rep is the integer that this object represents
 	 * @require none
 	 * @modify none
-	 * @effect none
+	 * @effect creates a new object
 	 */
-	public JSONstring(JSON parent, String str) {
+	public JSONint(JSON parent, int rep) {
 		super(parent);
-		this.mRep = str;
+		this.mRep = rep;
 	}
 	
 	/**
@@ -26,13 +26,13 @@ public class JSONstring extends JSON {
 	 * @effect none
 	 * @return this.mRep
 	 */
-	public String getString() {
+	public int getInt() {
 		return this.mRep;
 	}
-	
+
 	@Override
 	public String toString() {
-		//- TODO: implement
+		// TODO: implement
 		return null;
 	}
 }
